@@ -1,0 +1,4 @@
+C:/personal/src/sdl_tetris/cmake-build-debug/CMakeFiles/sdl_tetris.dir
+C:/personal/src/sdl_tetris/cmake-build-debug/CMakeFiles/sdl_tetris_bin.dir
+C:/personal/src/sdl_tetris/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/personal/src/sdl_tetris/cmake-build-debug/CMakeFiles/rebuild_cache.dir
