@@ -56,26 +56,33 @@ build CMakeFiles/sdl_tetris.dir/src/Game.cpp.obj: CXX_COMPILER__sdl_tetris_unsca
   OBJECT_DIR = CMakeFiles\sdl_tetris.dir
   OBJECT_FILE_DIR = CMakeFiles\sdl_tetris.dir\src
 
-build CMakeFiles/sdl_tetris.dir/src/systems/input/InputSystem.cpp.obj: CXX_COMPILER__sdl_tetris_unscanned_Debug C$:/personal/src/sdl_tetris/src/systems/input/InputSystem.cpp || cmake_object_order_depends_target_sdl_tetris
-  DEP_FILE = CMakeFiles\sdl_tetris.dir\src\systems\input\InputSystem.cpp.obj.d
+build CMakeFiles/sdl_tetris.dir/src/systems/InputSystem.cpp.obj: CXX_COMPILER__sdl_tetris_unscanned_Debug C$:/personal/src/sdl_tetris/src/systems/InputSystem.cpp || cmake_object_order_depends_target_sdl_tetris
+  DEP_FILE = CMakeFiles\sdl_tetris.dir\src\systems\InputSystem.cpp.obj.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
   INCLUDES = -IC:/personal/src/sdl_tetris/vendor/pugi -IC:/personal/src/sdl_tetris/include -IC:/personal/src/sdl_tetris/vendor/SDL/include/SDL2
   OBJECT_DIR = CMakeFiles\sdl_tetris.dir
-  OBJECT_FILE_DIR = CMakeFiles\sdl_tetris.dir\src\systems\input
+  OBJECT_FILE_DIR = CMakeFiles\sdl_tetris.dir\src\systems
 
-build CMakeFiles/sdl_tetris.dir/src/entities/objects/Object.cpp.obj: CXX_COMPILER__sdl_tetris_unscanned_Debug C$:/personal/src/sdl_tetris/src/entities/objects/Object.cpp || cmake_object_order_depends_target_sdl_tetris
-  DEP_FILE = CMakeFiles\sdl_tetris.dir\src\entities\objects\Object.cpp.obj.d
+build CMakeFiles/sdl_tetris.dir/src/entities/Block.cpp.obj: CXX_COMPILER__sdl_tetris_unscanned_Debug C$:/personal/src/sdl_tetris/src/entities/Block.cpp || cmake_object_order_depends_target_sdl_tetris
+  DEP_FILE = CMakeFiles\sdl_tetris.dir\src\entities\Block.cpp.obj.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
   INCLUDES = -IC:/personal/src/sdl_tetris/vendor/pugi -IC:/personal/src/sdl_tetris/include -IC:/personal/src/sdl_tetris/vendor/SDL/include/SDL2
   OBJECT_DIR = CMakeFiles\sdl_tetris.dir
-  OBJECT_FILE_DIR = CMakeFiles\sdl_tetris.dir\src\entities\objects
+  OBJECT_FILE_DIR = CMakeFiles\sdl_tetris.dir\src\entities
 
-build CMakeFiles/sdl_tetris.dir/src/entities/objects/Block.cpp.obj: CXX_COMPILER__sdl_tetris_unscanned_Debug C$:/personal/src/sdl_tetris/src/entities/objects/Block.cpp || cmake_object_order_depends_target_sdl_tetris
-  DEP_FILE = CMakeFiles\sdl_tetris.dir\src\entities\objects\Block.cpp.obj.d
+build CMakeFiles/sdl_tetris.dir/src/components/RigidBody.cpp.obj: CXX_COMPILER__sdl_tetris_unscanned_Debug C$:/personal/src/sdl_tetris/src/components/RigidBody.cpp || cmake_object_order_depends_target_sdl_tetris
+  DEP_FILE = CMakeFiles\sdl_tetris.dir\src\components\RigidBody.cpp.obj.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
   INCLUDES = -IC:/personal/src/sdl_tetris/vendor/pugi -IC:/personal/src/sdl_tetris/include -IC:/personal/src/sdl_tetris/vendor/SDL/include/SDL2
   OBJECT_DIR = CMakeFiles\sdl_tetris.dir
-  OBJECT_FILE_DIR = CMakeFiles\sdl_tetris.dir\src\entities\objects
+  OBJECT_FILE_DIR = CMakeFiles\sdl_tetris.dir\src\components
+
+build CMakeFiles/sdl_tetris.dir/src/entities/Level.cpp.obj: CXX_COMPILER__sdl_tetris_unscanned_Debug C$:/personal/src/sdl_tetris/src/entities/Level.cpp || cmake_object_order_depends_target_sdl_tetris
+  DEP_FILE = CMakeFiles\sdl_tetris.dir\src\entities\Level.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  INCLUDES = -IC:/personal/src/sdl_tetris/vendor/pugi -IC:/personal/src/sdl_tetris/include -IC:/personal/src/sdl_tetris/vendor/SDL/include/SDL2
+  OBJECT_DIR = CMakeFiles\sdl_tetris.dir
+  OBJECT_FILE_DIR = CMakeFiles\sdl_tetris.dir\src\entities
 
 
 # =============================================================================
@@ -85,7 +92,7 @@ build CMakeFiles/sdl_tetris.dir/src/entities/objects/Block.cpp.obj: CXX_COMPILER
 #############################################
 # Link the static library libsdl_tetris.a
 
-build libsdl_tetris.a: CXX_STATIC_LIBRARY_LINKER__sdl_tetris_Debug CMakeFiles/sdl_tetris.dir/src/Game.cpp.obj CMakeFiles/sdl_tetris.dir/src/systems/input/InputSystem.cpp.obj CMakeFiles/sdl_tetris.dir/src/entities/objects/Object.cpp.obj CMakeFiles/sdl_tetris.dir/src/entities/objects/Block.cpp.obj
+build libsdl_tetris.a: CXX_STATIC_LIBRARY_LINKER__sdl_tetris_Debug CMakeFiles/sdl_tetris.dir/src/Game.cpp.obj CMakeFiles/sdl_tetris.dir/src/systems/InputSystem.cpp.obj CMakeFiles/sdl_tetris.dir/src/entities/Block.cpp.obj CMakeFiles/sdl_tetris.dir/src/components/RigidBody.cpp.obj CMakeFiles/sdl_tetris.dir/src/entities/Level.cpp.obj
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = CMakeFiles\sdl_tetris.dir
   POST_BUILD = cd .

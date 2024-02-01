@@ -3,6 +3,7 @@
 //
 
 #include <map>
+#include <cstdint>
 #include "SDL_scancode.h"
 
 class InputSystem {
@@ -11,6 +12,8 @@ public:
 
     void Listen();
     bool IsKeyDown(SDL_Scancode key);
+    std::int8_t GetSteer();
+    bool GetRotate();
 
 private:
     InputSystem();
@@ -20,6 +23,7 @@ private:
 
     void HandleKeyDown(SDL_Scancode key);
     void HandleKeyUp(SDL_Scancode key);
+
 };
 
 #ifndef SDL_TETRIS_INPUTSYSTEM_H

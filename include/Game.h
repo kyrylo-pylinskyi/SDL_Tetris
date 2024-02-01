@@ -2,8 +2,12 @@
 // Created by pylinskyi.k on 25.01.2024.
 //
 
+#ifndef SDL_TETRIS_GAME_H
+#define SDL_TETRIS_GAME_H
+
 #include "SDL.h"
-#include "entites/objects/Block.h"
+#include "entites/Block.h"
+#include "entites/Level.h"
 
 class Game {
 public:
@@ -32,9 +36,7 @@ private:
     bool _isRunning;
 
     Block* _block;
+    Level* _level;
 };
-
-#ifndef SDL_TETRIS_GAME_H
-#define SDL_TETRIS_GAME_H
 
 #endif //SDL_TETRIS_GAME_H

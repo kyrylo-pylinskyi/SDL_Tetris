@@ -2,7 +2,7 @@
 // Created by pylinskyi.k on 25.01.2024.
 //
 
-#include "systems/input/InputSystem.h"
+#include "systems/InputSystem.h"
 #include "SDL.h"
 #include "Game.h"
 
@@ -50,4 +50,15 @@ void InputSystem::HandleKeyUp(SDL_Scancode key) {
 
 bool InputSystem::IsKeyDown(SDL_Scancode key) {
     return _keyStates[key];
+}
+
+std::int8_t InputSystem::GetSteer() {
+    if (IsKeyDown(SDL_SCANCODE_D) || IsKeyDown(SDL_SCANCODE_RIGHT)) return 1;
+    if (IsKeyDown(SDL_SCANCODE_A) || IsKeyDown(SDL_SCANCODE_LEFT)) return -1;
+    return 0;
+}
+
+bool InputSystem::GetRotate() {
+    if (IsKeyDown(SDL_SCANCODE_W) || IsKeyDown(SDL_SCANCODE_UP) || IsKeyDown(SDL_SCANCODE_S) || IsKeyDown(SDL_SCANCODE_DOWN)) return true;
+    return false;
 }

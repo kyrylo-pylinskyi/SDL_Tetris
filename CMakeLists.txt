@@ -5,9 +5,10 @@ set(CMAKE_CXX_STANDARD 23)
 
 set(SOURCES
         src/Game.cpp
-        src/systems/input/InputSystem.cpp
-        src/entities/objects/Object.cpp
-        src/entities/objects/Block.cpp
+        src/systems/InputSystem.cpp
+        src/entities/Block.cpp
+        src/components/RigidBody.cpp
+        src/entities/Level.cpp
 )
 
 include_directories(vendor/pugi)

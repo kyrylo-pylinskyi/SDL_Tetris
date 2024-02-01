@@ -699,7 +699,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Program Files/JetBrains/CLion 2023.2.1/bin/ninja/win/x64/ninja.exe"
+			"value" : "C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/ninja/win/x64/ninja.exe"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -1391,7 +1391,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "mingw32;-mwindows;C:/personal/src/sdl_tetris/vendor/SDL/lib/libSDL2main.a;mingw32;-mwindows;C:/personal/src/sdl_tetris/vendor/SDL/lib/libSDL2main.a;mingw32;-mwindows;C:/personal/src/sdl_tetris/vendor/SDL/lib/libSDL2main.a;mingw32;-mwindows;C:/personal/src/sdl_tetris/vendor/SDL/lib/libSDL2main.a;mingw32;-mwindows;C:/personal/src/sdl_tetris/vendor/SDL/lib/libSDL2main.a;mingw32;-mwindows;C:/personal/src/sdl_tetris/vendor/SDL/lib/libSDL2main.a;mingw32;-mwindows;C:/personal/src/sdl_tetris/vendor/SDL/lib/libSDL2main.a;mingw32;-mwindows;C:/personal/src/sdl_tetris/vendor/SDL/lib/libSDL2main.a;mingw32;-mwindows;C:/personal/src/sdl_tetris/vendor/SDL/lib/libSDL2main.a;mingw32;-mwindows;C:/personal/src/sdl_tetris/vendor/SDL/lib/libSDL2main.a;mingw32;-mwindows;C:/personal/src/sdl_tetris/vendor/SDL/lib/libSDL2main.a;mingw32;-mwindows;C:/personal/src/sdl_tetris/vendor/SDL/lib/libSDL2main.a;mingw32;-mwindows;C:/personal/src/sdl_tetris/vendor/SDL/lib/libSDL2main.a;C:/personal/src/sdl_tetris/vendor/SDL/lib/libSDL2.dll.a"
+			"value" : "mingw32;-mwindows;C:/personal/src/sdl_tetris/vendor/SDL/lib/libSDL2main.a;mingw32;-mwindows;C:/personal/src/sdl_tetris/vendor/SDL/lib/libSDL2main.a;C:/personal/src/sdl_tetris/vendor/SDL/lib/libSDL2.dll.a"
 		},
 		{
 			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",

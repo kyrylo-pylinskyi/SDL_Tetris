@@ -4,7 +4,7 @@
 
 #include "Game.h"
 #include "SDL_image.h"
-#include "systems/input/InputSystem.h"
+#include "systems/InputSystem.h"
 
 Game* Game::_instance = nullptr;
 
@@ -23,7 +23,7 @@ bool Game::Init() {
         return false;
     }
 
-    _window = SDL_CreateWindow("SDL Tetris", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 300, 300, 0);
+    _window = SDL_CreateWindow("SDL Tetris", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 100, 200, 0);
     if (!_window) {
         SDL_Log("Failed initialize Window: %s", SDL_GetError());
         return false;
@@ -35,7 +35,7 @@ bool Game::Init() {
         return false;
     }
 
-    _block = new Block(100, 100, BlockType::T);
+    _level = new Level(20, 8, 8, 2);
 
     return true;
 }
@@ -53,13 +53,13 @@ void Game::Quit() {
 }
 
 void Game::Update() {
-    _block->Update();
+    _level->Update();
 }
 
 void Game::Render() {
     SDL_SetRenderDrawColor(_renderer, 0, 0, 0, 255);
     SDL_RenderClear(_renderer);
-    _block->Render();
+    _level->Render();
     SDL_RenderPresent(_renderer);
 }
 

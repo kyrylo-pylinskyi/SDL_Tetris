@@ -41,14 +41,14 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "sdl_tetris::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-sdl_tetris-Debug-5e5f2c8992eb15b62c10.json",
+					"jsonFile" : "target-sdl_tetris-Debug-95d722e79ac204af0f48.json",
 					"name" : "sdl_tetris",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "sdl_tetris_bin::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-sdl_tetris_bin-Debug-221bcd7f087166ab8745.json",
+					"jsonFile" : "target-sdl_tetris_bin-Debug-6d8ebb00c4fbdf6e5bbd.json",
 					"name" : "sdl_tetris_bin",
 					"projectIndex" : 0
 				}
