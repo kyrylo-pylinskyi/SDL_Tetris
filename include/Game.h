@@ -7,7 +7,7 @@
 
 #include "SDL.h"
 #include "entites/Block.h"
-#include "entites/Level.h"
+#include "entites/GameBox.h"
 
 class Game {
 public:
@@ -36,7 +36,7 @@ private:
     bool _isRunning;
 
     Block* _block;
-    Level* _level;
+    GameBox* _level;
 };
 
 #endif //SDL_TETRIS_GAME_H

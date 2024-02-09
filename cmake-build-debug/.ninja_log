@@ -1,10 +1,11 @@
 # ninja log v5
-4	609	7284179525515612	CMakeFiles/sdl_tetris.dir/src/components/RigidBody.cpp.obj	91ae569444cc70f4
-5	1708	7285051175166317	CMakeFiles/sdl_tetris.dir/src/Game.cpp.obj	638c0b25ea5b1dfb
-2163	2369	7285051181685659	libsdl_tetris.a	b103414e9d36b601
-35	1729	7285051175396274	CMakeFiles/sdl_tetris_bin.dir/main.cpp.obj	7304c9143678602d
-13	1811	7285051176166570	CMakeFiles/sdl_tetris.dir/src/systems/InputSystem.cpp.obj	7c17cc2295501130
-18	2099	7285051179004414	CMakeFiles/sdl_tetris.dir/src/entities/Level.cpp.obj	91eadf03b77d6e81
-26	2163	7285051179710597	CMakeFiles/sdl_tetris.dir/src/entities/Block.cpp.obj	f03561401b41b57b
-2369	2664	7285051184593913	sdl_tetris_bin.exe	b31a9bcc8ae74786
-3	228	7285052052415641	build.ninja	6d65132928fd959a
+25	2085	7289230263372125	CMakeFiles/sdl_tetris.dir/src/components/RigidBody.cpp.obj	91ae569444cc70f4
+4	1391	7289378312827795	CMakeFiles/sdl_tetris.dir/src/Game.cpp.obj	638c0b25ea5b1dfb
+7	1456	7289392374645535	CMakeFiles/sdl_tetris.dir/src/entities/GameBox.cpp.obj	5fc833af09f56603
+1457	1661	7289392376593858	libsdl_tetris.a	2782d540e7e99f2e
+21	1408	7289378313025153	CMakeFiles/sdl_tetris_bin.dir/main.cpp.obj	7304c9143678602d
+11	1515	7289378314081690	CMakeFiles/sdl_tetris.dir/src/systems/InputSystem.cpp.obj	7c17cc2295501130
+9	4302	7285329598567846	CMakeFiles/sdl_tetris.dir/src/entities/Level.cpp.obj	91eadf03b77d6e81
+4	1189	7289384245305068	CMakeFiles/sdl_tetris.dir/src/entities/Block.cpp.obj	f03561401b41b57b
+1661	1875	7289392378731684	sdl_tetris_bin.exe	b31a9bcc8ae74786
+14	608	7291717623909749	build.ninja	6d65132928fd959a

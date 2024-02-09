@@ -23,7 +23,7 @@ bool Game::Init() {
         return false;
     }
 
-    _window = SDL_CreateWindow("SDL Tetris", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 100, 200, 0);
+    _window = SDL_CreateWindow("SDL Tetris", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 350, 500, 0);
     if (!_window) {
         SDL_Log("Failed initialize Window: %s", SDL_GetError());
         return false;
@@ -35,7 +35,7 @@ bool Game::Init() {
         return false;
     }
 
-    _level = new Level(20, 8, 8, 2);
+    _level = new GameBox(20, 10, 50, 50, 16, 1);
 
     return true;
 }

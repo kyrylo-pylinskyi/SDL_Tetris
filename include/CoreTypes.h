@@ -26,6 +26,7 @@ enum Side : std::uint8_t {
 struct Tile {
     SDL_Color Color;
     bool Active;
+    bool FallPreviewActive;
 };
 
 #endif //SDL_TETRIS_CORETYPES_H

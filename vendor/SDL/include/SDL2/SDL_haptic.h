@@ -493,9 +493,9 @@ typedef struct SDL_HapticConstant
 
     /* Envelope */
     Uint16 attack_length;   /**< Duration of the attack. */
-    Uint16 attack_level;    /**< Level at the start of the attack. */
+    Uint16 attack_level;    /**< GameBox at the start of the attack. */
     Uint16 fade_length;     /**< Duration of the fade. */
-    Uint16 fade_level;      /**< Level at the end of the fade. */
+    Uint16 fade_level;      /**< GameBox at the end of the fade. */
 } SDL_HapticConstant;
 
 /**
@@ -579,9 +579,9 @@ typedef struct SDL_HapticPeriodic
 
     /* Envelope */
     Uint16 attack_length;   /**< Duration of the attack. */
-    Uint16 attack_level;    /**< Level at the start of the attack. */
+    Uint16 attack_level;    /**< GameBox at the start of the attack. */
     Uint16 fade_length; /**< Duration of the fade. */
-    Uint16 fade_level;  /**< Level at the end of the fade. */
+    Uint16 fade_level;  /**< GameBox at the end of the fade. */
 } SDL_HapticPeriodic;
 
 /**
@@ -624,8 +624,8 @@ typedef struct SDL_HapticCondition
     Uint16 interval;        /**< How soon it can be triggered again after button. */
 
     /* Condition */
-    Uint16 right_sat[3];    /**< Level when joystick is to the positive side; max 0xFFFF. */
-    Uint16 left_sat[3];     /**< Level when joystick is to the negative side; max 0xFFFF. */
+    Uint16 right_sat[3];    /**< GameBox when joystick is to the positive side; max 0xFFFF. */
+    Uint16 left_sat[3];     /**< GameBox when joystick is to the negative side; max 0xFFFF. */
     Sint16 right_coeff[3];  /**< How fast to increase the force towards the positive side. */
     Sint16 left_coeff[3];   /**< How fast to increase the force towards the negative side. */
     Uint16 deadband[3];     /**< Size of the dead zone; max 0xFFFF: whole axis-range when 0-centered. */
@@ -665,9 +665,9 @@ typedef struct SDL_HapticRamp
 
     /* Envelope */
     Uint16 attack_length;   /**< Duration of the attack. */
-    Uint16 attack_level;    /**< Level at the start of the attack. */
+    Uint16 attack_level;    /**< GameBox at the start of the attack. */
     Uint16 fade_length;     /**< Duration of the fade. */
-    Uint16 fade_level;      /**< Level at the end of the fade. */
+    Uint16 fade_level;      /**< GameBox at the end of the fade. */
 } SDL_HapticRamp;
 
 /**
@@ -732,9 +732,9 @@ typedef struct SDL_HapticCustom
 
     /* Envelope */
     Uint16 attack_length;   /**< Duration of the attack. */
-    Uint16 attack_level;    /**< Level at the start of the attack. */
+    Uint16 attack_level;    /**< GameBox at the start of the attack. */
     Uint16 fade_length;     /**< Duration of the fade. */
-    Uint16 fade_level;      /**< Level at the end of the fade. */
+    Uint16 fade_level;      /**< GameBox at the end of the fade. */
 } SDL_HapticCustom;
 
 /**
@@ -769,9 +769,9 @@ typedef struct SDL_HapticCustom
  *
  *  // Envelope - All effects except condition effects have this
  *  Uint16 attack_length; // Duration of the attack (ms).
- *  Uint16 attack_level;  // Level at the start of the attack.
+ *  Uint16 attack_level;  // GameBox at the start of the attack.
  *  Uint16 fade_length;   // Duration of the fade out (ms).
- *  Uint16 fade_level;    // Level at the end of the fade.
+ *  Uint16 fade_level;    // GameBox at the end of the fade.
  *  \endcode
  *
  *

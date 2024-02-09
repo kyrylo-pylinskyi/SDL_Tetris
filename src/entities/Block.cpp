@@ -1,10 +1,4 @@
-//
-// Created by pylinskyi.k on 25.01.2024.
-//
-#include <functional>
 #include "entites/Block.h"
-#include "Game.h"
-#include "systems/InputSystem.h"
 
 Block::Block(BlockType type) : _type(type) {
     Initialize();
@@ -13,72 +7,45 @@ Block::Block(BlockType type) : _type(type) {
 void Block::Initialize() {
     ClearMatrix();
 
-    std::uint8_t height = 0;
-    std::uint8_t width = 0;
-
     switch (_type) {
         case BlockType::I:
-            height = 4;
-            width = 1;
-            _color = SDL_Color(0, 255, 255, 255);
-            SetDefineMatrixCallback([](int i, int j){ return true; });
+            InitializeMatrix(4, 1, [](int i, int j) { return true; }, SDL_Color(0, 255, 255, 255));
             break;
-
         case BlockType::O:
-            height = width = 2;
-            _color = SDL_Color(255, 255, 0, 255);
-            SetDefineMatrixCallback([](int i, int j){ return true; });
+            InitializeMatrix(2, 2, [](int i, int j) { return true; }, SDL_Color(255, 255, 0, 255));
             break;
-
         case BlockType::J:
-            height = 2;
-            width = 3;
-            _color = SDL_Color(128, 0, 128, 255);
-            SetDefineMatrixCallback([](int i, int j){ return (i == 0 && j == 2) || i == 1 ; });
+            InitializeMatrix(2, 3, [](int i, int j) { return (i == 0 && j == 2) || i == 1; }, SDL_Color(128, 0, 128, 255));
             break;
-
         case BlockType::L:
-            height = 2;
-            width = 3;
-            _color = SDL_Color(0, 255, 0, 255);
-            SetDefineMatrixCallback([](int i, int j){ return (i == 0 && j == 0) || i == 1 ; });
+            InitializeMatrix(2, 3, [](int i, int j) { return (i == 0 && j == 0) || i == 1; }, SDL_Color(0, 255, 0, 255));
             break;
-
         case BlockType::S:
-            height = 2;
-            width = 3;
-            _color = SDL_Color(255, 0, 0, 255);
-            SetDefineMatrixCallback([](int i, int j){ return (i == 0 && j < 2) || (i == 1 && j > 0); });
+            InitializeMatrix(2, 3, [](int i, int j) { return (i == 0 && j < 2) || (i == 1 && j > 0); }, SDL_Color(255, 0, 0, 255));
             break;
-
         case BlockType::Z:
-            height = 2;
-            width = 3;
-            _color = SDL_Color(0, 0, 255, 255);
-            SetDefineMatrixCallback([](int i, int j){return (i == 0 && j > 0) || (i == 1 && j < 2); });
+            InitializeMatrix(2, 3, [](int i, int j) { return (i == 0 && j > 0) || (i == 1 && j < 2); }, SDL_Color(0, 0, 255, 255));
             break;
-
         case BlockType::T:
-            height = 2;
-            width = 3;
-            _color = SDL_Color(255, 127, 0, 255);
-            SetDefineMatrixCallback([](int i, int j){return (i == 0 && j == 1) || (i == 1); });
+            InitializeMatrix(2, 3, [](int i, int j) { return (i == 0 && j == 1) || i == 1; }, SDL_Color(255, 127, 0, 255));
             break;
     }
 
-    for (std::uint8_t i = 0; i < height; i++){
-        std::vector<bool> row;
-        for (std::uint8_t j = 0; j < width; j++){
-            row.push_back(_defineMatrixCallback(i, j));
-        }
-        _matrix.push_back(row);
-    }
+    _rigidBody = std::make_unique<RigidBody>(rand() % 6 + 2, 0, GetMatrixWidth(), GetMatrixHeight());
+}
 
-    _rigidBody = new RigidBody(0, 0, width, height);
+void Block::InitializeMatrix(int height, int width, std::function<bool(int, int)> defineMatrixCallback, const SDL_Color& color) {
+    _color = color;
+    _matrix.resize(height, std::vector<bool>(width));
+    for (int i = 0; i < height; ++i) {
+        for (int j = 0; j < width; ++j) {
+            _matrix[i][j] = defineMatrixCallback(i, j);
+        }
+    }
 }
 
 void Block::Respawn(std::uint8_t gridWidth) {
-    _type = static_cast<BlockType>((static_cast<uint8_t>(_type) + 1) % MAX_BLOCK_TYPES);
+    _type = static_cast<BlockType>((static_cast<uint8_t>(_type) + rand()) % MAX_BLOCK_TYPES);
     _rigidBody->ResetPosition(gridWidth);
     Initialize();
 }
@@ -87,47 +54,26 @@ void Block::Fall() {
     _rigidBody->Fall();
 }
 
-void Block::Steer(Side side) {
-    switch(side){
-        case LEFT:
-            _rigidBody->SteerLeft();
-            break;
-        case RIGHT:
-            _rigidBody->SteerRight();
-            break;
-    }
+void Block::SteerRight() {
+    _rigidBody->SteerRight();
+}
+
+void Block::SteerLeft() {
+    _rigidBody->SteerLeft();
 }
 
 void Block::Rotate() {
-    std::uint8_t height = _matrix.size();
-    std::uint8_t width = _matrix.size() > 0 ? _matrix[0].size() : 0;
+    std::vector<std::vector<bool>> rotated(GetMatrixWidth(), std::vector<bool>(GetMatrixHeight(), false));
 
-    std::vector<std::vector<bool>> newMatrix(width, std::vector<bool>(height, false));
-
-    for (std::uint8_t i = 0; i < height; ++i) {
-        for (std::uint8_t j = 0; j < width; ++j) {
-            newMatrix[j][height - 1 - i] = _matrix[i][j];
+    for (int i = 0; i < GetMatrixHeight(); ++i) {
+        for (int j = 0; j < GetMatrixWidth(); ++j) {
+            rotated[j][GetMatrixHeight() - 1 - i] = _matrix[i][j];
         }
     }
 
-    _matrix = newMatrix;
+    _matrix = rotated;
 }
 
 void Block::ClearMatrix() {
-    if (_matrix.size() > 0){
-        for (auto row: _matrix) row.clear();
-        _matrix.clear();
-    }
-}
-
-std::vector<Position> Block::GetActiveCellPositions() const {
-    std::vector<Position> blocks;
-
-    for (std::uint8_t i = 0; i < GetMatrixHeight(); ++i){
-        for (std::uint8_t j = 0; j < GetMatrixHeight(); ++j){
-            blocks.push_back(Position(i, j));
-        }
-    }
-
-    return blocks;
+    _matrix.clear();
 }

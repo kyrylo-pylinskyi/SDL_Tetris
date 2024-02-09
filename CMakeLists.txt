@@ -8,7 +8,7 @@ set(SOURCES
         src/systems/InputSystem.cpp
         src/entities/Block.cpp
         src/components/RigidBody.cpp
-        src/entities/Level.cpp
+        src/entities/GameBox.cpp
 )
 
 include_directories(vendor/pugi)
